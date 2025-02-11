@@ -3,6 +3,7 @@
         <router-link v-if="!token" to="/user/login">Login</router-link>
         <router-link v-if="!token" to="/user/registration">Registration</router-link>
         <router-link v-if="token" :to="{name:'user.personal'}">Personal</router-link>
+        <router-link v-if="token" :to="{name:'user.index'}">User</router-link>
         <a v-if="token" @click.prevent="logout" href="#">Logout</a>
     </div>
     <router-view></router-view>
@@ -13,7 +14,7 @@ import axios from "axios";
 import router from "./router/router.js";
 
 export default {
-    name: "App",
+    name: "app",
     data() {
         return {
             token: localStorage.getItem('x_xsrf_token') // загружаем токен при старте

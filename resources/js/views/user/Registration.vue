@@ -49,7 +49,7 @@ export default {
                 }, {withCredentials: true})
                     .then(response => {
                         localStorage.setItem('x_xsrf_token', document.cookie)
-                        router.push({name: 'App'})
+                        router.push({name: 'user.index'})
                     })
             })
         }
