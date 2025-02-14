@@ -25,7 +25,7 @@ import axios from "axios";
 import router from "../../router/router.js";
 
 export default {
-    name: "user.registration",
+    name: "Registration",
 
     data() {
         return {
@@ -49,7 +49,7 @@ export default {
                 }, {withCredentials: true})
                     .then(response => {
                         localStorage.setItem('x_xsrf_token', document.cookie)
-                        router.push({name: 'user.index'})
+                        router.push({name: 'user.personal'})
                     })
             })
         }

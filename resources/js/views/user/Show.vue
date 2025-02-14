@@ -17,6 +17,7 @@ export default {
     data() {
         return {
             posts: [],
+            userId: this.$route.params.id
         }
     },
     mounted() {
@@ -24,7 +25,7 @@ export default {
     },
     methods: {
         getPosts() {
-            axios.get('/api/posts')
+            axios.get(`/api/${this.userId}/posts`)
                 .then(res => {
                     this.posts = res.data.data
                 })

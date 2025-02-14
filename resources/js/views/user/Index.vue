@@ -2,17 +2,19 @@
     <div class="w-96 mx-auto">
         <div v-if="users">
             <div class="flex mb-8 pd-8 border-b border-gray-400" v-for="user in users">
-                <div class="mr-3 pt-1 text-small">
-                    {{ user.id }}
-                </div>
-                <div>
-                    <div class="text-xl">
-                        {{ user.name }}
+                <router-link :to="{name: 'user.show',params:{id: user.id}}">
+                    <div class="mr-3 pt-1 text-small">
+                        {{ user.id }}
                     </div>
-                    <div class="text-sm text-small">
-                        {{ user.email }}
+                    <div>
+                        <div class="text-xl">
+                            {{ user.name }}
+                        </div>
+                        <div class="text-sm text-small">
+                            {{ user.email }}
+                        </div>
                     </div>
-                </div>
+                </router-link>
             </div>
         </div>
     </div>

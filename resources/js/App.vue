@@ -1,12 +1,12 @@
 <template>
     <div class="flex justify-between p-8 w-96 mx-auto">
-        <router-link v-if="!token" to="/user/login">Login</router-link>
-        <router-link v-if="!token" to="/user/registration">Registration</router-link>
+        <router-link v-if="!token" :to="{name:'user.login'}">Login</router-link>
+        <router-link v-if="!token" :to="{name:'user.registration'}">Registration</router-link>
         <router-link v-if="token" :to="{name:'user.personal'}">Personal</router-link>
         <router-link v-if="token" :to="{name:'user.index'}">User</router-link>
         <a v-if="token" @click.prevent="logout" href="#">Logout</a>
     </div>
-    <router-view></router-view>
+    <router-view :key="$route.fullPath"></router-view>
 </template>
 
 <script>
