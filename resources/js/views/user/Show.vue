@@ -25,8 +25,9 @@ export default {
     },
     methods: {
         getPosts() {
-            axios.get(`/api/${this.userId}/posts`)
+            axios.get(`/api/users/${this.userId}/posts`)
                 .then(res => {
+                    console.log(res)
                     this.posts = res.data.data
                 })
         },

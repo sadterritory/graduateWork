@@ -17,4 +17,9 @@ class UserController extends Controller
         $posts = $user->posts;
         return PostResource::collection($posts);
     }
+    public function toggleFollowing(User $user){
+        $res  = auth()->user()->followings()->toggle($user->id);
+        $data['is_followed'] = count($res['attached']) > 0;
+        return $data;
+    }
 }

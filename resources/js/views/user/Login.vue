@@ -8,7 +8,7 @@
             <input v-model="password" type="password" placeholder="password"
                    class="w-96 p-1 mb-2 border-inherit rounded-lg"></div>
         <div>
-            <input @click="login" type="submit" value="register"
+            <input @click="login" type="submit" value="Login"
                    class="block float-right mx-auto w-32 p-1 bg-sky-400 text-white rounded-lg">
         </div>
     </div>

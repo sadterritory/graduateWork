@@ -15,6 +15,9 @@
                         </div>
                     </div>
                 </router-link>
+                <div>
+                    <a @click="toggleFollowing()" class="block float-right mx-auto w-32 p-1 bg-sky-400 text-white rounded-lg" href="#">Follow</a>
+                </div>
             </div>
         </div>
     </div>
@@ -39,6 +42,13 @@ export default {
                 .then(res => {
                     console.log(res.data.data)
                     this.users = res.data.data
+                })
+        },
+        toggleFollowing(){
+            axios.get(`/api/users/${this.user.id}/toggle_following`)
+                .then(res => {
+                    console.log(res)
+                    this.posts = res.data.data
                 })
         }
     }
